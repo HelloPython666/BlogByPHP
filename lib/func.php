@@ -105,7 +105,7 @@ function makeThumb($oimg , $sw=100 , $sh = 100) {
 
 	return $simg;
 }
-
+//fenye 
 function getPage($num,$curr,$cnt) {
 	$max = ceil($num/$cnt);
 	// var_dump($max);
