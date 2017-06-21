@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <header>
+        <h1>my blog</h1>
+        <h4>路漫漫，修远兮</h4>
+    </header>
+    <nav>
+        <ul>
+            <li class = "nav-left"><a href="index.php">首 页</a></li>
+            <li class="nav-left"><a href="myartlist.php">个人中心</a></li>
+            <?php if($login){?>
+            <li class="nav-right"><a href="logout.php">注 销</a></li>
+            <?php }else{?>
+            <li class="nav-right"><a href="login.php">登 录</a></li>
+            <?php }?>
+    </nav>
+    <div id="main">
+        <div id="art">
+            <article>
+                <h2><a href="#"><?php echo $art['title'];?></a></h2>
+                <div class="entry_header">
+                    <time><?php echo date('Y/m/d' , $art['pubtime']);?></time>
+                    <?php if($art['author']){?>
+                    <a href="hisartlist.php?author=<?php echo $art['author']?>"><?php echo $art['author'];?></a>
+                    <?php }else{?>
+                    <a href="">ce shi</a>
+                    <?php }?>
+
+                    <a class="comment" href="#"><?php echo $art['comm'];?>条评论</a>
+                </div>
+                <?php if($art['thumb']){?>
+                <img src="<?php echo $art['thumb'];?>" alt="">
+                <?php }?>
+                <div class="entry_content">
+                    <?php echo $art['content'];?>
+                </div>
+            </article>
+        </div>
+        
+    </div>
+    <footer>
+        Contact me : <a href="mailto: w10624608@foxmail.com">w10624608@foxmail.com</a>
+    </footer>
+</body>
+</html>

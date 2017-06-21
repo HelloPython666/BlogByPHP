@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8">
+	<title>shou ye</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/login.css">	
+</head>
+<body>
+    <header>
+        <h1>my blog</h1>
+        <h4>路漫漫，修远兮</h4>
+    </header>
+    <nav>
+        <ul>
+            <li class = "nav-left"><a href="index.php">首 页</a></li>
+            <li class = "nav-right"><a href="login.php">登 录</a></li>
+        </ul>
+    </nav>
+	<div id = "main">
+		<div id ="lside" >
+			<form id= "artaddform" action="" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>标题:</label>
+                    <p>
+            <input type="text" name="title" value="<?php echo $art['title'];?>">
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label >内容:</label>
+                    <p>
+                        <textarea name="content"><?php echo $art['content'];?></textarea>
+                    </p>
+                </div>
+
+                    <div class="form-pic">
+                    <label >图片:</label>
+                    <p>
+                    <iframe src="<?php echo $art['thumb'];?>" ></iframe>
+                        <input type="file" name="pic" >
+                    </p> 
+                </div>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <p>
+                        <!-- <button type="submit">提交</button> -->
+                        <input type="submit" name="" value="确 认">
+                    </p>
+                </div>
+            </form>
+		</div>	
+	</div>
+    <footer>
+        Contact me : <a href="mailto: w10624608@foxmail.com">w10624608@foxmail.com</a>
+    </footer>
+</body>
+</html>

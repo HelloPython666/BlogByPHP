@@ -1,0 +1,172 @@
+    body {
+        background: #EFEFEF;
+        font-size:14px;
+    }
+    a {
+        color:#1e73be;
+    }
+    header{
+        background: white;
+        height: 140px;
+        padding: 40px 0px;
+        box-sizing:border-box;
+    }
+
+    header h1,header h4{
+        width: 1100px;
+        margin:0 auto;
+    }
+
+    header h1 {
+        font: 45px/56px '微软雅黑','黑体',sans-serif;
+    }
+
+    header h4{
+        color: #999999;
+        font: 19px/20px '新宋体','宋体',serif;
+    }    
+    nav {
+        background: #222;
+    }
+    nav ul {
+        width: 1100px;
+        height: 60px;
+        margin: 0 auto;
+    }
+    nav a{
+        text-align: center;
+        display: block;
+        padding: 0 20px;
+        line-height: 60px;
+        color: white;
+        font-size: 17px;
+        font-family: '新宋体','宋体',serif;
+    }
+    .nav-left{
+        width: 120px;
+        position: relative;
+        float: left;
+    }
+    .nav-right{
+        width: 120px;
+        position: relative;
+        float: right;
+    }
+    nav a:hover {
+        text-decoration: none;
+        background: #3f3f3f;
+    }
+    #main {
+        text-align: left;
+        width: 1100px;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    #main::after {
+        content: '';
+        height: 0px;
+        display: block;
+        clear: both;
+    }
+    #main h1{
+        font: 30px/50px '微软雅黑','黑体',sans-serif; 
+        margin-top: 50px;
+     } 
+    footer{
+        height: 65px;
+        padding: 20px 0px;
+        box-sizing:border-box;
+        background: #222;
+        text-align: center;
+        color: white; 
+        font:17px/22px '微软雅黑','黑体',sans-serif;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    #loginform{
+        margin-top: 50px;
+        margin-bottom: 180px;
+    }
+    #registerform{
+        margin-top: 50px;
+        margin-bottom: 100px;
+        width:500px;
+        margin: 0px,auto;
+    }
+    #artaddform{
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+
+    textarea {
+        padding: 5px 10px;
+        width: 50%;
+        height: 150px;
+        box-sizing:border-box;
+    }
+    .form-group {
+        margin:10px 0;
+
+    }
+    .form-pic{
+        width: 28%;
+    }
+    table {
+        width:80%;
+        margin: 0px,auto;
+    }
+    tr {
+        border-bottom:1px solid gray;
+    }
+    td {
+        padding:5px 0;
+    }
+
+    #pagebar{
+        color: #3a3a3a;
+        font:17px/22px '微软雅黑','黑体',sans-serif;
+        margin: 20px 0px;
+    }
+
+    #pagebar a,#pagebar a:visited {
+        color: #1e73be;
+    }
+
+    #pagebar a:hover {
+        color: black;
+    }
+    #hisartlisttable{
+        /*margin-top: 30px;*/
+    }
+    #hisartlist{
+        /*margin-top: 30px;*/
+    }
+    #rside{
+        margin-top: 70px;
+        margin-bottom: 60px;
+    }
+    #art{
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+    #eddl{
+        width: 150px;
+        float: right;
+        text-align: left;
+    }
+    article{
+        margin-top: 50px;
+    }
+    .registerp{
+        /*margin-bottom: 50px;*/
+        margin-top: 20px;
+    }
+    p{
+        margin-bottom: 5px;
+    }
+    #registersub{
+       margin: 0px, auto; 
+       width:48px;
+    }

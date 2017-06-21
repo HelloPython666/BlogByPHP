@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+</head>
+<body>
+        <header>
+        <h1>my blog</h1>
+        <h4>路漫漫，修远兮</h4>
+    </header>
+    <nav>
+        <ul>
+            <li class = "nav-left"><a href="index.php">首 页</a></li>
+            <li class="nav-left"><a href="myartlist.php">个人中心</a></li>
+            <li class = "nav-right"><a href="logout.php">注 销</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+    <h1><?php echo $author?> 的文章</h1>
+        <div id="rside">
+        <!-- <h1><?php echo $author?> de wenzhang</h1> -->
+            <!-- <table id = "hisartlisttable"> -->
+                <?php foreach($arts as $a) {?>
+                    <article>
+                    <p><a href="art.php?art_id=<?php echo $a['art_id'];?>"><?php echo $a['title'];?></a></p> 
+                    <p><?php echo date('Y/m/d', $a['pubtime']);?></p>
+                    <!-- <p><?php echo $a['comm'];?></p>  -->                 
+                            <?php if($a['thumb']){?>
+                            <img src="<?php echo $a['thumb'];?>" alt=""><?php }?>
+                            <?php echo $a['content'];?>                     
+                    <p><?php echo $a['comm'];?></p>  
+                    <hr> 
+                    <p id ="eddl">
+                        <a href="artedit.php?art_id=<?php echo $a['art_id'];?>">编 辑</a> |
+                        <a href="artdel.php?art_id=<?php echo $a['art_id'];?>">删 除</a>
+                    </p>
+                    <!-- <hr id = "shortline"> -->
+
+                    </article>            
+                <?php }?>
+            <!-- </table> -->
+            <div id="pagebar">
+            </div>
+        </div>
+    </div>
+    <footer>
+        Contact me : <a href="mailto: w10624608@foxmail.com">w10624608@foxmail.com</a>
+    </footer>
+</body>
+</html>

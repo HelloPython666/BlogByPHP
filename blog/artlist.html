@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link rel="stylesheet" href="./css/reset.css">
+<!-- <link rel="stylesheet" href="./css/adm.css"> -->
+<link rel="stylesheet" type="text/css" href="./css/login.css">
+</head>
+<body>
+    <header>
+        <h1>my blog</h1>
+        <h4>路漫漫，修远兮</h4>
+    </header>
+    <nav>
+        <ul>
+            <li class = "nav-left"><a href="index.php">首 页</a></li>
+            <li class="nav-left"><a href="myartlist.php">个人中心</a></li>
+            <li class = "nav-right"><a href="logout.php">注 销</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+
+        <div id="rside">
+            <table>
+                <tr>
+                    <td>biao ti</td>
+                    <td>shi jian</td>
+                    <td>ping lun</td>
+                </tr>
+                <?php foreach($arts as $a) {?>
+                <tr>
+                    <td><a href="art.php?art_id=<?php echo $a['art_id'];?>"><?php echo $a['title'];?></a></td>
+                    <td><?php echo date('Y/m/d', $a['pubtime']);?></td>
+                    <td><?php echo $a['comm'];?></td>
+                </tr>
+                <?php }?>
+            </table>
+                <div id="pagebar">
+                Pages:&nbsp;
+                <?php foreach($page as $a) {?>
+                <?php if($a == $curr) {?>
+                <?php echo $a;}else {?>
+                <a href="index.php?page=<?php echo $a?>"><?php echo $a;?></a>
+                <?php }?>
+                <?php }?>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Contact me : <a href="mailto: w10624608@foxmail.com">w10624608@foxmail.com</a>
+    </footer>
+</body>
+</html>

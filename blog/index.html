@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8">
+	<title>shou ye</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/login.css">	
+    <!-- <link rel="stylesheet" type="text/css" href="./css/adm.css">   -->
+</head>
+<body>
+	<header>
+		<h1>my blog</h1>
+		<h4>路漫漫，修远兮</h4>
+	</header>
+	<nav>
+		<ul>
+			<li class="nav-left"><a href="index.php">首 页</a></li>
+			<li class="nav-left"><a href="myartlist.php">个人中心</a></li>
+			<li class="nav-left"><a href="artadd.php">发表文章</a></li>
+            <?php if($login){?>
+            <li class="nav-right"><a href="logout.php">注 销</a></li>
+            <?php }else{?>
+            <li class="nav-right"><a href="login.php">登 录</a></li>
+            <?php }?>
+
+		</ul>
+	</nav>
+	<div id = "main">
+		<div id ="lside">
+            <article>
+		          <?php foreach($arts as $a ) {?>
+                <h2><a href="art.php?art_id=<?php echo $a['art_id'];?>"><?php echo $a['title'];?></a></h2>
+                <div class="entry_header">
+                    <time><?php echo date('Y/m/d' , $a['pubtime']);?></time>
+                    <?php if($a['author']){?>
+                    <a href="hisartlist.php?author=<?php echo $a['author']?>"><?php echo $a['author'];?></a>
+                    <?php }else{?>
+                    <a href="">ce shi</a>
+                    <?php }?>
+                    <a class="comment" href="#"><?php echo $a['comm'];?>条评论</a>
+                </div>
+                <?php if($a['thumb']) {?>
+                <img src="<?php echo '.' . $a['thumb'];?>" alt="">
+                <?php }?>
+                <div class="entry_content">
+                    <?php echo $a['content'];?>
+                </div>
+                <hr> 
+            </article>
+            <?php }?>
+<!--             <div id="pagebar">
+                Pages:&nbsp;
+                <?php foreach($page as $k=>$v) {?>
+                <?php if($k == $curr) {?>
+                <?php echo $k;}else {?>
+                <a href="index.php?<?php echo $v;?>"><?php echo $k;?></a>
+                <?php }?>
+                <?php }?>
+            </div> -->
+<!--              <div id="pagebar">
+                Pages:&nbsp;
+                <?php foreach($page as $k=>$v) {?>
+                <?php if($k == $curr) {?>
+                <?php echo $k;}else {?>
+                <a href="index.php?page=<?php echo $v?>"><?php echo $k;?></a>
+                <?php }?>
+                <?php }?>
+            </div> -->
+             <div id="pagebar">
+                Pages:&nbsp;
+                <?php foreach($page as $a) {?>
+                <?php if($a == $curr) {?>
+                <?php echo $a;}else {?>
+                <a href="index.php?page=<?php echo $a?>"><?php echo $a;?></a>
+                <?php }?>
+                <?php }?>
+            </div>
+            <p><a href="artlist.php">查看所有文章</a></p> 
+		</div>	
+		<div id ="rside">
+			
+		</div>
+	</div>
+    <footer>
+        Contact me : <a href="mailto: w10624608@foxmail.com">w10624608@foxmail.com</a>
+    </footer>
+</body>
+</html>
