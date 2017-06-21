@@ -108,14 +108,13 @@ function makeThumb($oimg , $sw=100 , $sh = 100) {
 //fenye 
 function getPage($num,$curr,$cnt) {
 	$max = ceil($num/$cnt);
-	// var_dump($max);
 	$left = max(1 , $curr-2);
 	$right = min($left+9 , $max);
 	$left = max(1 , $right-9);
 	$page = array();
 	for($i=$left;$i<=$right;$i++) {
 		// $_GET['page'] = $i;
- 		// $page[$i] = http_build_query($_GET);
+ 		// $page[$i] = http_build_query($_GET); GET &
  		$page[] = $i;
 	}
 	return $page;
